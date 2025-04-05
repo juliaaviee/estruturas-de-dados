@@ -1,0 +1,32 @@
+#include <stdio.h>  
+
+int main() {  // Função principal do programa
+    int conjunto[60], impar[60];  // Dois vetores com espaço para até 60 números:
+                                  // 'conjunto' guarda os números digitados
+                                  // 'impar' guarda apenas os números ímpares
+
+    int i, total = 0;  // 'i' será usado como contador nos loops
+                       // 'total' conta quantos números ímpares foram encontrados
+
+    // Laço que lê 7 números do usuário, começando do índice 6 até o 0
+    // Isso inverte a ordem de entrada
+    for (i = 6; i >= 0; i--) {
+        scanf("%d", &conjunto[i]);  // Lê um número e armazena no vetor na posição 'i'
+    }
+
+    // Laço que percorre o vetor 'conjunto' da posição 0 até 6
+    for (i = 0; i <= 6; i++) {
+        // Verifica se o número é ímpar (resto da divisão por 2 é diferente de 0)
+        if (conjunto[i] % 2 != 0) {
+            impar[total] = conjunto[i];  // Armazena o número ímpar no vetor 'impar'
+            total++;  // Incrementa o contador de números ímpares
+        }
+    }
+
+    // Laço que imprime todos os números ímpares encontrados
+    for (i = 0; i < total; i++) {
+        printf("%d ", impar[i]);  // Imprime cada número ímpar seguido de um espaço
+    }
+
+    return 0;  // Fim do programa
+}
